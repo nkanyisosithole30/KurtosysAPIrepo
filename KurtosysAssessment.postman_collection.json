@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "fec939a7-2926-4ed1-b887-b868dd0cbe8f",
+		"name": "KurtosysAssessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5512277"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify that correct url retuns status code: 200\", function () \r",
+							"{\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Verify that response time is less than: 200ms\", function () \r",
+							"{\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that Server header has a value: Cloudflare\", function () \r",
+							"{\r",
+							"    pm.response.to.have.header(\"Content-Type\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.kurtosys.com",
+					"protocol": "https",
+					"host": [
+						"www",
+						"kurtosys",
+						"com"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
